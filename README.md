@@ -1,2 +1,2 @@
-# shaguff
+
 Python project
