@@ -1,0 +1,59 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled10.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOCbnY7r/dNR1tZdCBY2YEN",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Shagufta-shail/shaguff/blob/master/web%20scrap\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0-mYaT14u_40",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import requests\n",
+        "import csv\n",
+        "from bs4 importBeautifulSoup\n",
+        "import time\n",
+        "with open('rates.csv','w')asrates:\n",
+        "  rates.write(\"Date,Rate\\n\")\n",
+        "  for m in range(8,12):\n",
+        "    for d in range(15,32):\n",
+        "      try:\n",
+        "        response=request.get('https://www.taraemerald.com/rooms')\n",
+        "        if response.ok:\n",
+        "          soup=BeautifulSoup(response.text)\n",
+        "          except Exception e:\n",
+        "            print e\n",
+        "            time.sleep(.2)\n",
+        "            king=soup.find(\"table\",{\"summary\":\"rooms availiability\"}).find(\"div\",\"room\")\n",
+        "            if King.find(\"div\",\"comfort-room\").text.strip()==\"king\":\n",
+        "              rate=king.find(\"div\",\"roomAvail\").find(\"div\",\"value\").strip()\n",
+        "              rates.write(\"2020\"+str(m)+\"-\"+str(d)+\",\"+str(rate)+\"\\n\")"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
